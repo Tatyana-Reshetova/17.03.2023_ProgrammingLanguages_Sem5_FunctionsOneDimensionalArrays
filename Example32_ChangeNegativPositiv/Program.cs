@@ -12,12 +12,19 @@ int [] GetRandomArray (int size, int minValue, int maxValue)
     return result;
 }
 
-int [] GetChangeArray (int [] array)
-{
-    for (int i = 0; i<array.Length;i++)
+int [] GetChangeArray (int [] array){
+int [] result = new int [array.Length];
+
+    //for (int i = 0; i<array.Length;i++)
+    //{
+    //    array [i] *= -1;
+    //}
+    int j = 0;
+    foreach (int i in array)
     {
-        array [i] *= -1;
-    }
+        result [j] = i * -1;
+        j++;
+    }    
     return array;
 }
 
