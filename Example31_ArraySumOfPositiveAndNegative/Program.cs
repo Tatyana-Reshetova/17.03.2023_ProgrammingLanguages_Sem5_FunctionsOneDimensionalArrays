@@ -5,7 +5,7 @@ Console.Clear();
 int [] array = GetBinaryArray(12);
 
 Console.WriteLine($"[   {String.Join(", ", array)}   ]");
-Console.WriteLine($"[   {String.Join(", ", sum(array))}   ]");
+//Console.WriteLine($"[   {String.Join(", ", sum(array))}   ]");
 
 
 int [] GetBinaryArray (int size){
@@ -28,4 +28,19 @@ int [] sum (int [] array)
     }
     int [] SumNegativPositiv = {negativ, positiv};
     return SumNegativPositiv;
-}  
+} 
+
+//Сумма положительных и отрицательных массива через
+// foreach (перебирает поочередно массив не обращаясь к индексу)
+
+int [] SumPosNeg (int [] array)
+{
+    int [] result = new int [2];
+    foreach (int el in array)
+    {
+        result[0] += el > 0 ? el : 0; 
+        result[1] += el < 0 ? el : 0; 
+    }
+    return result;
+}
+ Console.WriteLine($"[   {String.Join(", ", SumPosNeg(array))}   ]");
